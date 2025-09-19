@@ -20,11 +20,14 @@ See `SDN_firewall_paper.pdf` for a detailed write-up.
 ## Usage 
 
 1. Add `uni_firewall.py` and `proxy_learning.py` into `/home/ubuntu/pox/ext` directory.
-2. Launch network with `sudo python launch_network.py` (ensure `data_center.py` in working directory)
-3. Start the controller in a second terminal  (recommended flags and formatting included): 
+2. Start the controller in a second terminal  (recommended flags and formatting included): 
 ```
 sudo ~/pox/pox.py log.level --DEBUG openflow.of_01 openflow.discovery host_tracker proxy_learning uni_firewall info.packet_dump samples.pretty_log
 ```
+3. In second terminal, launch network with `sudo python launch_network.py` (ensure `data_center.py` in working directory). 
+
+    * NOTE: If connections are failing, in Mininet CLI use CTL-C and try `pingall` again. If connections still fail, exit mininet, stop controller, kill any leftover processes with `sudo mn -c` and re-launch. (Mininet connection learning delay may occasionally occur due to running `pingall` in `launch_network` immediately after topology launch.)  
+
 4. In Mininet CLI: 
 
    * Disable firewall: `mininet> h2 sh -c 'printf fw | nc 10.0.0.1 8888 -w 1'`
