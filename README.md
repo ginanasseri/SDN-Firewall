@@ -1,14 +1,13 @@
 # SDN-Firewall
 
-## University Campus Network Simulation of a Software-Defined Network Firewall with Proxy ARP Optimization
-
 **Author:** Gina Nasseri
 
 Simulates a centralized SDN firewall for a campus network, enforcing different access rules for Admin and Student LANs, where Student LANs are isolated and Admin LANs have no restrictions, and which can be enabled/disabled by hosts in the Admin LAN. Network connectivity is optimized using Proxy ARP.  
 
 The enable/disable feature is emulated by sending messages to specified TCP ports between admin hosts. 
 
-See `SDN_firewall_paper.pdf` for a detailed write-up. 
+See `SDN_firewall_paper.pdf` for a detailed write-up.
+ 
 ---
 
 ## System Requirements
